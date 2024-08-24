@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Puzzle</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg/bg.jpg'); /* Set background image */
+            background-size: cover; /* Ensure the background image covers the entire window */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Keep the background image fixed during scrolling */
+            height: 100vh; /* Ensure the body takes up the full height of the window */
+            margin: 0; /* Remove default margin */
+        }
+        .header {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            display: flex; /* Use flexbox to align items */
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+        }
+        .header img {
+            height: 30px;
+            margin-right: 10px; /* Add some space between the logo and the title */
+        }
+        .login-button, .register-button {
+            position: absolute;
+            top: 50%;
+            right: 120px;
+            transform: translateY(-50%);
+        }
+        .register-button {
+            right: 20px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .btn-start {
+            display: block;
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 20px;
+        }
+        .puzzle-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="bg/logo.png" alt="Sliding Saga">
+    <h1>SLIDING SAGA</h1>
+    <button class="btn btn-outline-light login-button" data-toggle="modal" data-target="#loginModal">Log In</button>
+    <button class="btn btn-outline-light register-button" data-toggle="modal" data-target="#registerModal">Register</button>
+</div>
+
+<div class="container">
+</div>
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm" action="log" method="post">
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="pword">Password:</label>
+                <input type="password" class="form-control" id="pword" name="pword" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="#" class="register-link" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">New User?</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">User Registration</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="reg" method="post">
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" name="uname" required>
+            </div>
+            <div class="form-group">
+                <label for="pword">Password:</label>
+                <input type="password" class="form-control" id="pword" name="pword" required>
+            </div>
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" class="form-control" id="fname" name="fname" required>
+            </div>
+            <!--  <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" class="form-control" id="lname" name="lname" required>
+            </div>
+            <div class="form-group">
+                <label for="addr">Address:</label>
+                <input type="text" class="form-control" id="addr" name="addr" required>
+            </div>
+            <div class="form-group">
+                <label for="mid">Mail ID:</label>
+                <input type="email" class="form-control" id="mid" name="mid" required>
+            </div>
+            <div class="form-group">
+                <label for="phno">Phone Number:</label>
+                <input type="tel" class="form-control" id="phno" name="phno" required>
+            </div>
+            -->
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
