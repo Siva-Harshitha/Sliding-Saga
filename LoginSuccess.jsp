@@ -6,19 +6,17 @@
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #000; /* Set background color to black */
             margin: 0;
-            padding-top: 60px; /* Add padding to avoid overlap with fixed header */
+            padding-top: 60px; 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative; /* Set position relative for body */
-            min-height: 100vh; /* Ensure body covers entire viewport */
+            position: relative; 
+            min-height: 100vh; 
         }
         .header {
             width: 100%;
@@ -27,56 +25,55 @@
             padding: 10px 0;
             display: flex;
             align-items: center;
-            position: fixed; /* Fix the header at the top */
+            position: fixed; 
             top: 0;
             left: 0;
-            z-index: 1000; /* Ensure the header is above other elements */
+            z-index: 1000; 
         }
         .welcome-msg {
             font-size: 24px;
-            margin: 0 auto; /* Center the welcome message */
+            margin: 0 auto; 
         }
         .background-image {
-            width: 30%; /* Adjust width as needed */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 50%; /* Make the image oval-shaped */
+            width: 30%; 
+            height: auto; 
+            border-radius: 50%; 
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute; /* Position it in the center */
+            position: absolute; 
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         .background-image img {
             width: 100%;
-            height: auto; /* Maintain aspect ratio */
+            height: auto; 
         }
         .button-container {
             text-align: center;
-            position: absolute; /* Position it absolutely */
-            bottom: 50px; /* Move it up by adjusting this value */
-            width: 100%; /* Ensure full width */
+            position: absolute; 
+            bottom: 50px; 
+            width: 100%; 
         }
         .btn {
             padding: 20px 30px;
         }
         .logout-container {
             position: absolute;
-            right: -120px; /* Adjust as needed */
+            right: -120px; 
         }
         .btn-narrow {
-            padding: 5px 10px; /* Narrow padding for the logout button */
-            font-size: 14px; /* Adjust font size if needed */
+            padding: 5px 10px; 
+            font-size: 14px; 
         }
         .btn-wide {
-            width: 700px; /* Set a specific width for the Start Game button */
+            width: 700px; 
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <div class="header">
         <div class="container d-flex justify-content-center align-items-center position-relative">
             <div class="welcome-msg text-center">
@@ -96,13 +93,11 @@
     </div>
 
     <div class="background-image">
-        <img src="bg/logo.png" alt="Logo"> <!-- Make sure this path is correct -->
+        <img src="bg/logo.png" alt="Logo"> 
     </div>
     <div class="button-container">
         <a href="index.html" class="btn btn-success btn-wide">Start Game</a>        
     </div>
-
-    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
