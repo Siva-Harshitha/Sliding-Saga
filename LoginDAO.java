@@ -17,9 +17,6 @@ public class LoginDAO {
                 ub.setuName(rs.getString(1));
                 ub.setpWord(rs.getString(2));
                 ub.setfName(rs.getString(3));
-                ub.setAddr(rs.getString(5));
-                ub.setmId(rs.getString(6));
-                ub.setPhNo(rs.getLong(7));*/
             }
         } catch (Exception e) {
             e.printStackTrace();
