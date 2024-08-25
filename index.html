@@ -1,4 +1,3 @@
-<!--  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,29 +11,29 @@
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             color: #0c67ae;
-            background-image: url('bg/bg1.jpg'); /* Set background image */
-            background-size: cover; /* Ensure the background covers the entire area */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Do not repeat the background image */
-            background-attachment: fixed; /* Fix the background image */
+            background-image: url('bg/bg1.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
         }
 
         #theme-selection {
-            padding: 50px 0; /* Add some padding */
+            padding: 50px 0; 
         }
 
         #board {
-            width: 480px; /* Increased size */
-            height: 480px; /* Increased size */
+            width: 480px; 
+            height: 480px; 
             background-color: black;
-            border: 10px solid white; /* Changed to black */
+            border: 10px solid white; 
             display: flex;
             flex-wrap: wrap;
         }
 
         #board img {
-            width: 115px; /* Increased size */
-            height: 115px; /* Increased size */
+            width: 115px; 
+            height: 115px;
             border: 1px solid white;
         }
 
@@ -43,11 +42,11 @@
         }
 
         button {
-            font-size: 16px; /* Decreased font size */
-            padding: 15px 30px; /* Increased padding */
-            min-width: 120px; /* Increased minimum width */
-            min-height: 60px; /* Increased minimum height */
-            border-radius: 50px; /* Oval shape */
+            font-size: 16px;
+            padding: 15px 30px; 
+            min-width: 120px; 
+            min-height: 60px; 
+            border-radius: 50px; 
         }
 
         #hint-image {
@@ -70,13 +69,12 @@
             margin-left: 20px;
         }
 
-        /* Additional styles for vertical button alignment */
         .btn-vertical {
             display: block;
             width: 50%;
-            margin: 0 auto 10px; /* Center horizontally with auto margins, and add bottom margin */
-            position: relative; /* Required for the glow effect */
-            overflow: hidden; /* Required for the glow effect */
+            margin: 0 auto 10px; 
+            position: relative; 
+            overflow: hidden; 
         }
 
         .btn-vertical::before {
@@ -92,75 +90,69 @@
             z-index: -1;
         }
 
-        /* Larger buttons for puzzle selection */
         .btn-puzzle {
-            font-size: 22px; /* Increased font size */
+            font-size: 22px; 
             padding: 20px 40px;
             min-width: 50px;
             min-height: 50px;
-            background-color: #ADD8E6; /* Light Blue color */
-            border: 1px solid #ADD8E6; /* Match the border color to the background color */
-            color: black; /* Text color for better readability */
+            background-color: #ADD8E6; 
+            border: 1px solid #ADD8E6; 
+            color: black; 
         }
 
-        /* Styles for the back button */
         .btn-back {
             position: absolute;
             top: -115px;
             left: -200px;
-            font-size: 14px; /* Smaller font size */
-            padding: 10px 20px; /* Reduced padding */
-            border-radius: 10px; /* Reduced border radius */
+            font-size: 14px; 
+            padding: 10px 20px; 
+            border-radius: 10px; 
             min-width: 100px;
             min-height: 65px;
         }
 
-        /* Smaller exit and hint buttons */
         .btn-hint {
-            font-size: 20px; /* Smaller font size */
-            padding: 10px 20px; /* Reduced padding */
-            min-width: 115px; /* Reduced minimum width */
-            min-height: 55px; /* Reduced minimum height */
-            border-radius: 20px; /* Smaller border radius */
+            font-size: 20px; 
+            padding: 10px 20px; 
+            min-width: 115px;
+            min-height: 55px; 
+            border-radius: 20px; 
         }
-        .btn-exit{
-            font-size: 16px; /* Smaller font size */
-            padding: 3px 5px; /* Reduced padding */
-            min-width: 155px; /* Reduced minimum width */
-            min-height: 20px; /* Reduced minimum height */
-            border-radius: 20px; /* Smaller border radius */
+        .btn-exit {
+            font-size: 16px; 
+            padding: 3px 5px; 
+            min-width: 155px; 
+            min-height: 20px;
+            border-radius: 20px; 
         }
         .large-title {
             font-family: 'Press Start 2P', cursive;
-            font-size: 3em; /* Increased size */
-            color: white; /* Changed to white */
+            font-size: 3em; 
+            color: white; 
         }
 
         h2 {
-            color: black; /* Light red color */
+            color: black; 
         }
 
-        /* New styles for light brown buttons */
         .btn-light-brown {
-            background-color: #D2B48C; /* Light brown color */
+            background-color: #D2B48C; 
             border: 1px solid #D2B48C;
             color: white;
         }
 
         .btn-light-brown:hover {
-            background-color: #C0A080; /* Darker shade of light brown */
+            background-color: #C0A080; 
             border-color: #C0A080;
         }
 
-        /* Turns counter color */
         #turns {
             color: white;
-            margin-bottom: 20px; /* Adjust margin to move up */
+            margin-bottom: 20px; 
         }
 
-        /* Exit button position */
         .btn-exit {
-            margin-top: 20px; /* Adjust margin to move up */
+            margin-top: 20px; 
         }
     </style>
 </head>
@@ -202,16 +194,13 @@
         var theme;
         var folder;
 
-        // Fetch fname from your server and store it in a variable
-        var fname = ""; // Initialize an empty variable
+        var fname = ""; 
 
-        // Function to fetch fname from the server
         function fetchFname() {
-            // Replace with your API endpoint or server-side code to get the fname
             fetch('/api/get-fname')
                 .then(response => response.json())
                 .then(data => {
-                    fname = data.fname; // Assuming the response has a property 'fname'
+                    fname = data.fname; 
                 })
                 .catch(error => {
                     console.error('Error fetching fname:', error);
@@ -219,8 +208,9 @@
         }
 
         window.onload = function() {
-            fetchFname(); // Fetch fname when the page loads
-        };
+            fetchFname(); 
+            document.getElementById("puzzle-container").classList.add("d-none");
+        }
 
         function selectFolder(selectedTheme) {
             theme = selectedTheme;
@@ -228,11 +218,11 @@
             document.getElementById("folder-selection").classList.remove("d-none");
 
             let folderButtons = document.getElementById("folder-buttons");
-            folderButtons.innerHTML = ''; // Clear previous buttons
+            folderButtons.innerHTML = ''; 
 
             for (let i = 1; i <= 25; i++) {
                 let button = document.createElement("button");
-                button.className = "btn btn-secondary m-2 btn-puzzle"; // Added btn-puzzle class
+                button.className = "btn btn-secondary m-2 btn-puzzle"; 
                 button.innerText = i;
                 button.onclick = function() { startGame(i.toString()) };
                 folderButtons.appendChild(button);
@@ -253,10 +243,10 @@
 
         function loadImages() {
             let board = document.getElementById("board");
-            board.innerHTML = ''; // clear the board
+            board.innerHTML = ''; 
 
             let imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
-            imgOrder = shuffleArray(imgOrder); // shuffle the images
+            imgOrder = shuffleArray(imgOrder);
 
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < columns; c++) {
@@ -264,400 +254,6 @@
                     tile.id = `${r}-${c}`;
                     tile.src = `${theme}/${folder}/${imgOrder.shift()}.jpg`;
 
-                    // DRAG FUNCTIONALITY
-                    tile.addEventListener("dragstart", dragStart);
-                    tile.addEventListener("dragover", dragOver);
-                    tile.addEventListener("dragenter", dragEnter);
-                    tile.addEventListener("dragleave", dragLeave);
-                    tile.addEventListener("drop", dragDrop);
-                    tile.addEventListener("dragend", dragEnd);
-
-                    board.append(tile);
-                }
-            }
-        }
-
-        function exitToSelectPuzzle() {
-            document.getElementById("theme-selection").classList.add("d-none");
-            document.getElementById("folder-selection").classList.remove("d-none");
-            document.getElementById("puzzle-container").classList.add("d-none");
-            turns = 0;
-            document.getElementById("turns").innerText = turns;
-            document.getElementById("result").innerText = '';
-            document.getElementById("hint-image").style.display = 'none';
-        }
-
-        function dragStart() {
-            currTile = this; // this refers to the img tile being dragged
-            console.log("Drag Start: ", currTile.src);
-        }
-
-        function dragOver(e) {
-            e.preventDefault();
-        }
-
-        function dragEnter(e) {
-            e.preventDefault();
-        }
-
-        function dragLeave() {
-        }
-
-        function dragDrop() {
-            otherTile = this; // this refers to the img tile being dropped on
-            console.log("Drag Drop: ", otherTile.src);
-        }
-
-        function dragEnd() {
-            if (!otherTile || currTile === otherTile) {
-                console.log("Invalid drop target");
-                return;
-            }
-
-            let currImg = currTile.src;
-            let otherImg = otherTile.src;
-
-            currTile.src = otherImg;
-            otherTile.src = currImg;
-
-            turns += 1;
-            document.getElementById("turns").innerText = turns;
-
-            checkCorrect();
-        }
-
-        function checkCorrect() {
-            let correct = true;
-            let board = document.getElementById("board");
-            let tiles = board.getElementsByTagName("img");
-
-            for (let i = 0; i < tiles.length; i++) {
-                let tile = tiles[i];
-                let coords = tile.id.split("-");
-                let r = parseInt(coords[0]);
-                let c = parseInt(coords[1]);
-                let position = (r * columns) + c + 1;
-
-                if (!tile.src.includes(position.toString() + ".jpg")) {
-                    correct = false;
-                    break;
-                }
-            }
-
-            if (correct) {
-                document.getElementById("board").classList.add("correct");
-                showAlert();
-            }
-        }
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        function showHint() {
-            let hintImage = document.getElementById("hint-image");
-            hintImage.src = `${theme}/${folder}/hint.jpg`; // Display the hint image
-            hintImage.style.display = 'block';
-        }
-
-        function showAlert() {
-            // Create the alert message
-            let message = document.createElement("div");
-            message.innerHTML = `<h2 style="color: #fff; font-size: 2em;">Congratulations, ${fname}! Puzzle solved.</h2>`;
-            message.style.position = "fixed";
-            message.style.top = "50%";
-            message.style.left = "50%";
-            message.style.transform = "translate(-50%, -50%)";
-            message.style.backgroundColor = "rgba(0, 128, 0, 0.8)"; // Green background
-            message.style.color = "#fff"; // White text color
-            message.style.padding = "20px";
-            message.style.borderRadius = "10px";
-            message.style.zIndex = "1000";
-            message.style.boxShadow = "0px 0px 10px #000";
-
-            // Append the message to the body
-            document.body.appendChild(message);
-
-            // Remove the message after 3 seconds
-            setTimeout(function() {
-                document.body.removeChild(message);
-            }, 3000);
-        }
-    </script>
-</body>
-</html>
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Puzzle</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            color: #0c67ae;
-            background-image: url('bg/bg1.jpg'); /* Set background image */
-            background-size: cover; /* Ensure the background covers the entire area */
-            background-position: center; /* Center the background image */
-            background-repeat: no-repeat; /* Do not repeat the background image */
-            background-attachment: fixed; /* Fix the background image */
-        }
-
-        #theme-selection {
-            padding: 50px 0; /* Add some padding */
-        }
-
-        #board {
-            width: 480px; /* Increased size */
-            height: 480px; /* Increased size */
-            background-color: black;
-            border: 10px solid white; /* Changed to black */
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        #board img {
-            width: 115px; /* Increased size */
-            height: 115px; /* Increased size */
-            border: 1px solid white;
-        }
-
-        .correct {
-            border: 2px solid green;
-        }
-
-        button {
-            font-size: 16px; /* Decreased font size */
-            padding: 15px 30px; /* Increased padding */
-            min-width: 120px; /* Increased minimum width */
-            min-height: 60px; /* Increased minimum height */
-            border-radius: 50px; /* Oval shape */
-        }
-
-        #hint-image {
-            max-width: 100%;
-            max-height: 150px;
-            display: none;
-            margin-bottom: 20px;
-        }
-
-        #puzzle-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #hint-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-left: 20px;
-        }
-
-        /* Additional styles for vertical button alignment */
-        .btn-vertical {
-            display: block;
-            width: 50%;
-            margin: 0 auto 10px; /* Center horizontally with auto margins, and add bottom margin */
-            position: relative; /* Required for the glow effect */
-            overflow: hidden; /* Required for the glow effect */
-        }
-
-        .btn-vertical::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 1px solid transparent;
-            border-radius: inherit;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-            z-index: -1;
-        }
-
-        /* Larger buttons for puzzle selection */
-        .btn-puzzle {
-            font-size: 22px; /* Increased font size */
-            padding: 20px 40px;
-            min-width: 50px;
-            min-height: 50px;
-            background-color: #ADD8E6; /* Light Blue color */
-            border: 1px solid #ADD8E6; /* Match the border color to the background color */
-            color: black; /* Text color for better readability */
-        }
-
-        /* Styles for the back button */
-        .btn-back {
-            position: absolute;
-            top: -115px;
-            left: -200px;
-            font-size: 14px; /* Smaller font size */
-            padding: 10px 20px; /* Reduced padding */
-            border-radius: 10px; /* Reduced border radius */
-            min-width: 100px;
-            min-height: 65px;
-        }
-
-        /* Smaller exit and hint buttons */
-        .btn-hint {
-            font-size: 20px; /* Smaller font size */
-            padding: 10px 20px; /* Reduced padding */
-            min-width: 115px; /* Reduced minimum width */
-            min-height: 55px; /* Reduced minimum height */
-            border-radius: 20px; /* Smaller border radius */
-        }
-        .btn-exit {
-            font-size: 16px; /* Smaller font size */
-            padding: 3px 5px; /* Reduced padding */
-            min-width: 155px; /* Reduced minimum width */
-            min-height: 20px; /* Reduced minimum height */
-            border-radius: 20px; /* Smaller border radius */
-        }
-        .large-title {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 3em; /* Increased size */
-            color: white; /* Changed to white */
-        }
-
-        h2 {
-            color: black; /* Light red color */
-        }
-
-        /* New styles for light brown buttons */
-        .btn-light-brown {
-            background-color: #D2B48C; /* Light brown color */
-            border: 1px solid #D2B48C;
-            color: white;
-        }
-
-        .btn-light-brown:hover {
-            background-color: #C0A080; /* Darker shade of light brown */
-            border-color: #C0A080;
-        }
-
-        /* Turns counter color */
-        #turns {
-            color: white;
-            margin-bottom: 20px; /* Adjust margin to move up */
-        }
-
-        /* Exit button position */
-        .btn-exit {
-            margin-top: 20px; /* Adjust margin to move up */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 class="text-center mt-5 large-title"><b>Sliding Saga</b></h1>
-        <div id="theme-selection" class="text-center mt-4">
-            <h2><b>Select a Theme</b></h2>
-            <button class="btn btn-light-brown btn-vertical" onclick="selectFolder('freedom-fighters')"><i><h3>Freedom Fighters</h3></i></button>
-            <button class="btn btn-info btn-vertical" onclick="selectFolder('national-leaders')"><i><h3>National Leaders</h3></i></button>
-            <button class="btn btn-light-brown btn-vertical" onclick="selectFolder('monuments')"><i><h3>Monuments</h3></i></button>
-            <button class="btn btn-info btn-vertical" onclick="selectFolder('scientists')"><i><h3>Scientists</h3></i></button>
-            <button class="btn btn-light-brown btn-vertical" onclick="selectFolder('Cartoon-Characters')"><i><h3>Cartoon</h3></i></button>
-        </div>
-        <div id="folder-selection" class="text-center mt-4 d-none position-relative">
-            <h2><i>Select a puzzle</i></h2>
-            <div id="folder-buttons"></div>
-            <button class="btn btn-warning btn-back" onclick="backToThemes()">Back</button>
-        </div>
-        <div id="puzzle-container" class="mt-5 d-none">
-            <div>
-                <div id="board" class="d-flex flex-wrap"></div>
-                <div id="result" class="mt-4 text-center"></div>
-                <div style="color: white;">Turns: <span id="turns">0</span></div>
-                <button class="btn btn-danger mt-3 btn-exit" onclick="exitToSelectPuzzle()">Exit</button>
-            </div>
-            <div id="hint-container">
-                <img id="hint-image" alt="Hint Image">
-                <button class="btn btn-info mt-3 btn-hint" onclick="showHint()">Hint</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        var rows = 4;
-        var columns = 4;
-        var currTile;
-        var otherTile;
-        var turns = 0;
-        var theme;
-        var folder;
-
-        // Fetch fname from your server and store it in a variable
-        var fname = ""; // Initialize an empty variable
-
-        // Function to fetch fname from the server
-        function fetchFname() {
-            // Replace with your API endpoint or server-side code to get the fname
-            fetch('/api/get-fname')
-                .then(response => response.json())
-                .then(data => {
-                    fname = data.fname; // Assuming the response has a property 'fname'
-                })
-                .catch(error => {
-                    console.error('Error fetching fname:', error);
-                });
-        }
-
-        window.onload = function() {
-            fetchFname(); // Fetch fname when the page loads
-            document.getElementById("puzzle-container").classList.add("d-none");
-        }
-
-        function selectFolder(selectedTheme) {
-            theme = selectedTheme;
-            document.getElementById("theme-selection").classList.add("d-none");
-            document.getElementById("folder-selection").classList.remove("d-none");
-
-            let folderButtons = document.getElementById("folder-buttons");
-            folderButtons.innerHTML = ''; // Clear previous buttons
-
-            for (let i = 1; i <= 25; i++) {
-                let button = document.createElement("button");
-                button.className = "btn btn-secondary m-2 btn-puzzle"; // Added btn-puzzle class
-                button.innerText = i;
-                button.onclick = function() { startGame(i.toString()) };
-                folderButtons.appendChild(button);
-            }
-        }
-
-        function backToThemes() {
-            document.getElementById("theme-selection").classList.remove("d-none");
-            document.getElementById("folder-selection").classList.add("d-none");
-        }
-
-        function startGame(selectedFolder) {
-            folder = selectedFolder;
-            document.getElementById("folder-selection").classList.add("d-none");
-            document.getElementById("puzzle-container").classList.remove("d-none");
-            loadImages();
-        }
-
-        function loadImages() {
-            let board = document.getElementById("board");
-            board.innerHTML = ''; // clear the board
-
-            let imgOrder = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
-            imgOrder = shuffleArray(imgOrder); // shuffle the images
-
-            for (let r = 0; r < rows; r++) {
-                for (let c = 0; c < columns; c++) {
-                    let tile = document.createElement("img");
-                    tile.id = `${r}-${c}`;
-                    tile.src = `${theme}/${folder}/${imgOrder.shift()}.jpg`;
-
-                    // DRAG FUNCTIONALITY
                     tile.addEventListener("dragstart", dragStart);
                     tile.addEventListener("dragover", dragOver);
                     tile.addEventListener("dragenter", dragEnter);
@@ -681,7 +277,7 @@
         }
 
         function dragStart() {
-            currTile = this; // this refers to the img tile being dragged
+            currTile = this; 
             console.log("Drag Start: ", currTile.src);
         }
 
@@ -697,7 +293,7 @@
         }
 
         function dragDrop() {
-            otherTile = this; // this refers to the img tile being dropped on
+            otherTile = this; 
             console.log("Drag Drop: ", otherTile.src);
         }
 
@@ -754,7 +350,7 @@
 
         function showHint() {
             let hintImage = document.getElementById("hint-image");
-            hintImage.src = `${theme}/${folder}/hint.jpg`; // Display the hint image
+            hintImage.src = `${theme}/${folder}/hint.jpg`; 
             hintImage.style.display = 'block';
         }
     </script>
