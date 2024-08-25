@@ -12,10 +12,6 @@ public class RegisterServlet extends HttpServlet{
 		ub.setuName(req.getParameter("uname"));
 		ub.setpWord(req.getParameter("pword"));
 		ub.setfName(req.getParameter("fname"));
-		/*ub.setlName(req.getParameter("lname"));
-		ub.setAddr(req.getParameter("addr"));
-		ub.setmId(req.getParameter("mid"));
-		ub.setPhNo(Long.parseLong(req.getParameter("phno")));*/
 		int k=new RegisterDAO().register(ub);
 		if(k>0) {
 			req.setAttribute("msg","User Registered Successfully...<br>");
