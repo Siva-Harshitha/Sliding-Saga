@@ -8,12 +8,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('bg/bg.jpg'); /* Set background image */
-            background-size: cover; /* Ensure the background image covers the entire window */
-            background-position: center; /* Center the background image */
-            background-attachment: fixed; /* Keep the background image fixed during scrolling */
-            height: 100vh; /* Ensure the body takes up the full height of the window */
-            margin: 0; /* Remove default margin */
+            background-image: url('bg/bg.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            height: 100vh; 
+            margin: 0; 
         }
         .header {
             background-color: black;
@@ -21,13 +21,13 @@
             padding: 10px;
             text-align: center;
             position: relative;
-            display: flex; /* Use flexbox to align items */
-            align-items: center; /* Center items vertically */
-            justify-content: center; /* Center items horizontally */
+            display: flex; 
+            align-items: center;
+            justify-content: center; 
         }
         .header img {
             height: 30px;
-            margin-right: 10px; /* Add some space between the logo and the title */
+            margin-right: 10px; 
         }
         .login-button, .register-button {
             position: absolute;
@@ -66,7 +66,6 @@
 
 <div class="container">
 </div>
-<!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -94,7 +93,6 @@
   </div>
 </div>
 
-<!-- Register Modal -->
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -115,26 +113,10 @@
                 <input type="password" class="form-control" id="pword" name="pword" required>
             </div>
             <div class="form-group">
-                <label for="fname">First Name:</label>
+                <label for="fname">Name:</label>
                 <input type="text" class="form-control" id="fname" name="fname" required>
             </div>
-            <!--  <div class="form-group">
-                <label for="lname">Last Name:</label>
-                <input type="text" class="form-control" id="lname" name="lname" required>
-            </div>
-            <div class="form-group">
-                <label for="addr">Address:</label>
-                <input type="text" class="form-control" id="addr" name="addr" required>
-            </div>
-            <div class="form-group">
-                <label for="mid">Mail ID:</label>
-                <input type="email" class="form-control" id="mid" name="mid" required>
-            </div>
-            <div class="form-group">
-                <label for="phno">Phone Number:</label>
-                <input type="tel" class="form-control" id="phno" name="phno" required>
-            </div>
-            -->
+            
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
       </div>
